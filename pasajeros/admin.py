@@ -12,5 +12,5 @@ class PasajeroAdmin(ModelAdmin):
     def get_readonly_fields(self, request, obj=None):
         readonly = list(super().get_readonly_fields(request, obj))
         if obj:
-            readonly.append('es_menor')
+            readonly.append('es_menor') 
         return readonly
