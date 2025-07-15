@@ -9,4 +9,6 @@ def admin(request):
 def asientos(request):
     return render(request, 'frontend/Asientos.html')
 
+def disponibilidad(request):
+    return render(request, 'frontend/disponibilidad.html')
 # Agrega más vistas según sea necesario

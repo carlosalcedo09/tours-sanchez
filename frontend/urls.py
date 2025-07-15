@@ -5,5 +5,6 @@ urlpatterns = [
     path('', views.index, name='index'),
     path('admin/', views.admin, name='admin_page'),
     path('asientos/', views.asientos, name='asientos'),
+    path('disponibilidad/', views.disponibilidad, name='disponibilidad')
     # Agrega más rutas según sea necesario
 ]
