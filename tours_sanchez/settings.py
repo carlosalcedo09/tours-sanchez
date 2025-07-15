@@ -1,9 +1,11 @@
 import os
 from pathlib import Path
+from django.urls import reverse_lazy
 from dotenv import load_dotenv
 load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -128,7 +130,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
@@ -147,15 +148,109 @@ REST_FRAMEWORK = {
 }
 
 
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / 'frontend/static']
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 UNFOLD = {
     "SITE_TITLE": "Panel de Administración",
     "SITE_HEADER": " ",
-    "SITE_ICON": "admin/img/logo.jpeg",
+    "SITE_ICON": "/static/img/logo.jpeg",
     "SITE_TAGLINE": "Bienvenido al sistema de gestión",
     "SHOW_HISTORY": True,
     "SHOW_VIEW_ON_SITE": True,
     "COPYRIGHT": "© 2025 Tours Sánchez",
+    "THEME": "light",
+    "LOGIN": {
+         "image": "https://img.freepik.com/fotos-premium/edificio-corporativo_948023-2557.jpg",
+    },
+    "COLORS": {
+    "primary": {
+        "50": "14 11 82",
+        "100": "14 11 82",
+        "200": "14 11 82",
+        "300": "14 11 82",
+        "400": "14 11 82",
+        "500": "14 11 82",
+        "600": "14 11 82",
+        "700": "14 11 82",
+        "800": "14 11 82",
+        "900": "14 11 82",
+        "950": "14 11 82"
+    }
+    },
+    "SIDEBAR": {
+        "show_search": True,
+        "show_all_applications": False,
+        "navigation": [
+            {
+                "title": "Seguridad",
+                "separator": True,
+                "items": [
+                    {
+                        "title": "Usuarios",
+                        "icon": "person",
+                        "link": reverse_lazy("admin:usuarios_usuario_changelist"),
+                    },
+                    {
+                        "title": "Permisos",
+                        "icon": "lock",
+                        "link": reverse_lazy("admin:auth_group_changelist"),
+                    }
+                    
+                ],
+            },
+            {
+                "title": "Gestion de viajes",
+                "separator": True,
+                "items": [
+                    {
+                        "title": "Buses",
+                        "icon": "view_list",
+                        "link": reverse_lazy("admin:buses_bus_changelist"),
+                    },
+                    {
+                        "title": "Pasajeros",
+                        "icon": "person",
+                        "link": reverse_lazy("admin:pasajeros_pasajero_changelist"),
+                    },
+                    {
+                        "title": "Rutas",
+                        "icon": "route",
+                        "link": reverse_lazy("admin:rutas_ruta_changelist"),
+                    },
+                    {
+                        "title": "Asientos",
+                        "icon": "tune",
+                        "link": reverse_lazy("admin:asientos_asiento_changelist"),
+                    },
+                    {
+                        "title": "Compras",
+                        "icon": "business_center",
+                        "link": reverse_lazy("admin:compras_compra_changelist"),
+                    },
+                    
+                ],
+            },
+            {
+                "title": "Gestion de notificaciones",
+                "separator": True,
+                "items": [
+                    {
+                        "title": "Notificaciones",
+                        "icon": "campaign",
+                        "link": reverse_lazy("admin:notificaciones_notificacion_changelist"),
+                    },
+                    
+                ],
+            },
+        ],
+    },
+
     "NAV": [
         {
             "title": "Dashboard",
@@ -174,7 +269,3 @@ UNFOLD = {
         },
     ],
 }
-
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / 'frontend/static']
-STATIC_ROOT = BASE_DIR / 'staticfiles'

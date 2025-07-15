@@ -1,8 +1,9 @@
 from django.contrib import admin
 from .models import Pasajero
+from unfold.admin import ModelAdmin
 
 @admin.register(Pasajero)
-class PasajeroAdmin(admin.ModelAdmin):
+class PasajeroAdmin(ModelAdmin):
     list_display = ('dni', 'nombres', 'apellidos', 'fecha_nacimiento', 'es_menor', 'acompaniante_dni')
     list_filter = ('es_menor',)
     search_fields = ('dni', 'nombres', 'apellidos', 'correo')

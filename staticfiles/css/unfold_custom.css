@@ -1,0 +1,9 @@
+/* Cambia el fondo del sidebar */
+.sidebar {
+    background-color: #0e0b52 !important;
+}
+
+/* Cambia el texto del sidebar a blanco */
+.sidebar * {
+    color: #ffffff !important;
+}
