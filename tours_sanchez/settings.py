@@ -237,7 +237,7 @@ UNFOLD = {
                 ],
             },
             {
-                "title": "Gestion de notificaciones",
+                "title": "Gestión de notificaciones",
                 "separator": True,
                 "items": [
                     {
