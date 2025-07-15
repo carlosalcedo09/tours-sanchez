@@ -21,6 +21,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    
+    'unfold',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -141,6 +143,35 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': (
         'rest_framework.permissions.IsAuthenticated',
     )
+}
+
+
+
+UNFOLD = {
+    "SITE_TITLE": "Panel de Administración",
+    "SITE_HEADER": " ",
+    "SITE_ICON": "admin/img/logo.jpeg",
+    "SITE_TAGLINE": "Bienvenido al sistema de gestión",
+    "SHOW_HISTORY": True,
+    "SHOW_VIEW_ON_SITE": True,
+    "COPYRIGHT": "© 2025 Tours Sánchez",
+    "NAV": [
+        {
+            "title": "Dashboard",
+            "icon": "heroicons-outline:home",
+            "url": "/admin/",
+        },
+        {
+            "title": "Pasajeros",
+            "icon": "heroicons-outline:user",
+            "model": "pasajeros.Pasajero",
+        },
+        {
+            "title": "Reservas",
+            "icon": "heroicons-outline:calendar",
+            "model": "reservas.Reserva",
+        },
+    ],
 }
 
 STATIC_URL = '/static/'
