@@ -85,11 +85,10 @@ DATABASES = {
         'PASSWORD': os.getenv('DATABASE_PASSWORD'),
         'HOST': os.getenv('DATABASE_HOST'),
         'PORT': int(os.getenv('DATABASE_PORT')),
-        'OPTIONS':{
-            'driver': 'ODBC Driver 17 for SQL Server'
-        }
+        'CONN_MAX_AGE': 300
     }
 }
+
 
 
 # Password validationp
@@ -143,6 +142,7 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     )
 }
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'frontend/static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
