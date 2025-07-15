@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+  {% load static %}
+  {% include "frontend/disponibilidad.html" %}
+
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+<link rel="icon" href="{% static 'frontend/images/BOLETA FIRMADA (7).png' %}" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tours Sánchez</title>
+  <link rel="stylesheet" href="{% static 'frontend/css/index.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="menu-icon">
+        <i class="fas fa-bars"></i>
+      </div>
+      <div class="logo">
+      <img src="{% static 'frontend/images/Image Pasted 2025-24-04 at 18.06.56.png' %}" alt="Tours Sánchez" />
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="hero-section">
+        <div class="rectangle-4"></div>
+      <div class="overlay">
+        <div class="search-container">
+          <h2>Busca tu Pasaje</h2>
+          <hr />
+          <form>
+            <div class="form-group">
+              <label>Origen</label>
+              <div class="input-wrapper">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" placeholder="Ingresa Ciudad de Origen" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Destino</label>
+              <div class="input-wrapper">
+                <i class="fas fa-map-marker-alt"></i>
+                <input type="text" placeholder="Ingresa Ciudad de Destino" />
+              </div>
+            </div>
+            <div class="row">
+              <div class="form-group">
+                <label>Fecha de Salida</label>
+                <div class="input-wrapper">
+                  <i class="fas fa-calendar-alt"></i>
+                  <input type="date" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label>Pasajeros</label>
+                <div class="input-wrapper">
+                  <i class="fas fa-users"></i>
+                  <input type="number" value="1" min="1" />
+                </div>
+              </div>
+            </div>
+            <button type="submit" formaction="{% url 'disponibilidad.html
+            ' %}">Buscar</button>
+          </form>
+        </div>
+      </div>
+          <div class="hero-quote">"Conecta destinos, crea recuerdos."</div>
+
+    </div>
+  </main>
+</body>
+<section class="destinos">  
+  <div  class="destinos-titulo"></div>
+  <div class="rectangle-23"><h2>Descubre más destinos</h2></div>
+  
+  <div class="destinations-grid">
+        <div class="destination-card">
+            <div class="card-background ayacucho"></div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <div class="card-top">
+                    <div class="card-header">Descubre la magia de</div>
+                    <h3 class="card-title">Ayacucho</h3>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="price-section">
+                        <div class="price-accent"></div>
+                        <div class="price-info">
+                            <div class="price-label">Pasajes desde:</div>
+                            <div class="price">S/50</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="cta-button">CONOCE MÁS</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="destination-card">
+            <div class="card-background arequipa"></div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <div class="card-top">
+                    <div class="card-header">Descubre la magia de</div>
+                    <h3 class="card-title">Arequipa</h3>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="price-section">
+                        <div class="price-accent"></div>
+                        <div class="price-info">
+                            <div class="price-label">Pasajes desde:</div>
+                            <div class="price">S/70</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="cta-button">CONOCE MÁS</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="destination-card">
+            <div class="card-background abancay"></div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <div class="card-top">
+                    <div class="card-header">Descubre la magia de</div>
+                    <h3 class="card-title">Abancay</h3>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="price-section">
+                        <div class="price-accent"></div>
+                        <div class="price-info">
+                            <div class="price-label">Pasajes desde:</div>
+                            <div class="price">S/60</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="cta-button">CONOCE MÁS</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="destination-card">
+            <div class="card-background ica"></div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <div class="card-top">
+                    <div class="card-header">Descubre la magia de</div>
+                    <h3 class="card-title">Ica</h3>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="price-section">
+                        <div class="price-accent"></div>
+                        <div class="price-info">
+                            <div class="price-label">Pasajes desde:</div>
+                            <div class="price">S/30</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="cta-button">CONOCE MÁS</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="destination-card">
+            <div class="card-background nazca"></div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <div class="card-top">
+                    <div class="card-header">Descubre la magia de</div>
+                    <h3 class="card-title">Nazca</h3>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="price-section">
+                        <div class="price-accent"></div>
+                        <div class="price-info">
+                            <div class="price-label">Pasajes desde:</div>
+                            <div class="price">S/40</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="cta-button">CONOCE MÁS</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="destination-card">
+            <div class="card-background pucquio"></div>
+            <div class="card-overlay"></div>
+            <div class="card-content">
+                <div class="card-top">
+                    <div class="card-header">Descubre la magia de</div>
+                    <h3 class="card-title">Puquio</h3>
+                </div>
+                
+                <div class="card-bottom">
+                    <div class="price-section">
+                        <div class="price-accent"></div>
+                        <div class="price-info">
+                            <div class="price-label">Pasajes desde:</div>
+                            <div class="price">S/50</div>
+                        </div>
+                    </div>
+                    
+                    <a href="#" class="cta-button">CONOCE MÁS</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="destinos">  
+  <div  class="destinos-titulo"></div>
+  <div class="rectangle-23"><h2>Diseño y Comodidad en Cada Detalle</h2></div>
+    </div>
+      <div class="seat-section-cards">
+        <!-- Asiento Económico -->
+        <div class="seat-section-card">
+            <img src="{% static 'frontend/images/Imagen3 (1).png' %}" alt="seat-section-image-economico" class="seat-section-image-economico">
+          <div class="seat-section-info">
+            <div class="seat-section-angle">140°</div>
+            <div class="seat-section-type">(Servicio Económico)</div>
+            <div class="seat-section-description">
+              Asiento económico que cuenta con conector USB y aire acondicionado.
+            </div>
+          </div>
+        </div>
+        <!-- Asiento Especial -->
+        <div class="seat-section-card">
+          <img src="{% static 'frontend/images/Imagen2 (1).png' %}" alt="Asiento Especial" class="seat-section-image-especial">
+          <div class="seat-section-info">
+            <div class="seat-section-angle">160°</div>
+            <div class="seat-section-type">(Servicio Especial)</div>
+            <div class="seat-section-description">
+              Asiento especial donde podrás recostarte y viajar cómodo, cuenta con conector USB y aire acondicionado.
+            </div>
+          </div>
+        </div>
+        <!-- Asiento VIP -->
+        <div class="seat-section-card">
+            <img src="{% static 'frontend/images/Imagen1 (1).png' %}" alt="Asiento VIP" class="seat-section-image-vip">
+          <div class="seat-section-info">
+            <div class="seat-section-angle">180°</div>
+            <div class="seat-section-type">(Servicio Vip)</div>
+            <div class="seat-section-description">
+              Asiento VIP (Tipo cama) donde podrás recostarte y viajar cómodo, cuenta con conector USB, aire acondicionado y pantalla.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="seccion-1">
+      <div class="banner-section" style="width: 100%; position: relative; left: 0; margin: 0; overflow: hidden; background: #fff !important;">
+    <img src="{% static 'frontend/images/Azul y Blanco Diagrama de Cola de Pescado Presentación (20) (1).png' %}" 
+             alt="Banner con fondo azul y blanco, muestra un diagrama de cola de pescado y texto promocional de Tours Sánchez, transmite un ambiente profesional y acogedor" 
+             class="banner-image" />
+      </div>
+      </section>
+    <section class="seccion-1">
+      <div class="banner-section" style="width: 100%; position: relative; left: 0; margin: 0; overflow: hidden; background: #fff !important;">
+    <img src="{% static 'frontend/images/Azul y Blanco Diagrama de Cola de Pescado Presentación (23) (1).png' %}" 
+             alt="Banner con fondo azul y blanco, muestra un diagrama de cola de pescado y texto promocional de Tours Sánchez, transmite un ambiente profesional y acogedor" 
+             class="banner-image" />
+      </div>
+      </section>
+<footer >
+  &copy; Tours Sanchez - 2025 Derechos reservados.
+</footer>
+
+<link href="https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&display=swap" rel="stylesheet">
+
+
+</html>
+    <style>
+      /* Hero Section */
+      .hero-section {
+        background: url("{% static 'frontend/images/4 (3).jpg' %}") no-repeat right center / cover;
+        height: 91vh;
+        position: relative;
+        background-position: 30% center;
+      }
+      .seat-section-image-economico {
+      width: 80%;
+      height: 100%;
+      margin-left: 40px;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+    }
+      .seat-section-image-especial {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+    }
+    .seat-section-image-vip {
+      width: 100%;
+      height: 80%;
+      object-fit: contain;
+      margin: auto;
+      display: block;
+      transition: opacity 0.3s ease;
+      margin-left: -10px; /* mueve la imagen más a la izquierda */
+    }
+    .ayacucho {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.112), rgba(0, 0, 0, 0.087)), url("{% static 'frontend/images/Proyecto-nuevo-26 (1).jpg' %}");
+    }
+
+    .arequipa {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.112), rgba(0, 0, 0, 0.087)), url("{% static 'frontend/images/360_F_539042061_g5bt4pHqJYSJFq3kt8jPyVLVv066h6OE (1).jpg' %}");
+    }
+
+    .abancay {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.112), rgba(0, 0, 0, 0.087)), url("{% static 'frontend/images/146 (1).jpg' %}");
+    }
+
+    .ica {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.112), rgba(0, 0, 0, 0.087)), url("{% static 'frontend/images/SouthAmericaPeru2017_1010_180704-5912_AGP_HDR _2_ _1_ (1).jpg' %}");
+    }
+
+    .nazca {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.112), rgba(0, 0, 0, 0.087)), url("{% static 'frontend/images/linea-2 (1).jpg' %}");
+    }
+
+    .pucquio {
+      background-image: linear-gradient(rgba(0, 0, 0, 0.112), rgba(0, 0, 0, 0.087)), url("{% static 'frontend/images/000246085M (1).jpg' %}");
+    }
+
+    </style>
+
+

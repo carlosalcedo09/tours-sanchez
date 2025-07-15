@@ -1,0 +1,579 @@
+@import url('https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body, html {
+  font-family: 'Segoe UI', sans-serif;
+  height: 100%;
+  background-color: #000;
+}
+
+/* Header */
+header {
+  background-color: #0F0B53;
+  height: 80px;
+  display: flex;
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center;     /* Centra verticalmente */
+  position: relative;      /* Para posicionar el icono de menú */
+}
+
+/* Ícono de menú a la izquierda */
+.menu-icon {
+  position: absolute;
+  left: 30px;
+}
+
+.menu-icon i {
+    font-size: 40px;
+    color: white;
+    margin-top: 20px;
+}
+
+/* Logo centrado */
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo img {
+  height: 80px;
+  object-fit: contain;
+}
+
+
+
+.rectangle-4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.47); /* 47% de opacidad */
+  z-index: 1;
+}
+
+
+.overlay {
+  position: absolute;
+  right: 170px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.724);
+  border-radius: 30px;
+  padding: 30px;
+  width: 370px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.3);
+  z-index: 2;
+  border: 1px solid #00000072;
+}
+
+.search-container h2 {
+  text-align: center;
+  color: #0F0B53;
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.search-container hr {
+  width: 50px;
+  height: 3px;
+  background-color: #1ea0f2;
+  border: none;
+  margin: 0 auto 20px auto;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  font-size: 15px;
+  color: #0F0B53;
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper i {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  color: #1ea0f2;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 12px 12px 14px 35px;
+  border-radius: 5px;
+  border: 1px solid #f5fbffab;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-wrapper input:focus,
+.input-wrapper input:hover {
+  border-color: #1ea0f2;
+  box-shadow: 0 0 0 1px #1ea0f288;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+}
+
+.row .form-group {
+  flex: 1;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background-color: #0F0B53;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 10px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #0F0B53;
+}
+
+/* Frase en la imagen */
+.hero-quote {
+  position: absolute;
+  bottom: 100px;
+  left: 47%;
+  transform: translateX(-50%);
+  color: rgba(255, 255, 255, 0.705);
+  font-size: 40px;
+  font-family: 'Aref Ruqaa', serif;
+  z-index: 2;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+}
+
+/* Destinos */
+.destinos {
+  background-color: #f8f8fc;
+  padding: 37px 40px;
+}
+
+.rectangle-23 {
+  width: 1px;
+  height: 90px;
+  padding: 8px;
+  background: #FEC63D;
+  border: 1px solid #FEC63D;
+  margin-left: -40px; /* Ajusta este valor para moverlo más a la derecha */
+}
+
+.destinos-titulo {
+  display: flex;
+  align-items: center;
+  margin-bottom: -15px;
+}
+
+.destinos h2 {
+  width: auto;
+  height: auto;
+  opacity: 0.9;
+  color: #101453;
+  font-family: "Arsenal";
+  font-weight: bold;
+  font-size: 45px;
+  text-align: left;
+  margin-left: 30px; /* Más alejado del cuadrado amarillo */
+  line-height: 1.5;    /* Una sola línea, sin salto */
+  white-space: nowrap; /* Evita el salto de línea */
+  gap: 0;
+}
+/* Manteniendo intacto el diseño de .destinos-grid y tarjetas */
+.header {
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+  position: relative;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 80px;
+  height: 6px;
+  background-color: #FFD000;
+}
+
+.header h1 {
+  font-size: 48px;
+  color: #2c3e50;
+  font-weight: 600;
+  margin-left: 100px;
+}
+
+.destinations-grid {
+  max-width: 95%;
+  margin: 40px auto 0 auto; /* Más abajo */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+
+}
+
+.destination-card {
+  position: relative;
+  width: 95%;
+  height: 300px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.destination-card:hover {
+  transform: translateY(-5px);
+}
+
+.card-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.018), rgba(0, 0, 0, 0.6));
+  z-index: 1;
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+  padding: 25px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  color: white;
+}
+
+.card-header {
+  font-size: 16px;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Títulos de destinos en blanco */
+.card-title {
+  width: 325px;
+  height: 140px;
+  opacity: 0.9;
+  color: #FFFFFF !important;
+  font-family: "Arsenal";
+  font-weight: bold;
+  font-size: 50px;
+  font-variant: small-caps;
+  text-align: left;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  line-height: 0.9;
+}
+
+.card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price-section {
+  display: flex;
+  align-items: center;
+}
+
+.price-accent {
+  width: 8px;
+  height: 60px;
+  background-color: #FFD000;
+  margin-right: 12px;
+}
+
+.price-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.price-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 2px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.price {
+  font-size: 28px;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+  background-color: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 12px 30px;
+  border-radius: 25px;
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.cta-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+@media (max-width: 968px) {
+  .destinations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .header h1 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  .destinations-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .destination-card {
+    height: 250px;
+  }
+
+  .header h1 {
+    font-size: 28px;
+    margin-left: 60px;
+  }
+
+  .header::before {
+    width: 50px;
+    height: 4px;
+  }
+
+  .card-content {
+    padding: 20px;
+  }
+
+  .card-title {
+    font-size: 32px;
+  }
+
+  .price {
+    font-size: 24px;
+  }
+
+  .cta-button {
+    padding: 10px 24px;
+    font-size: 12px;
+  }
+}
+
+    .seat-section-container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    .seat-section-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 40px;
+      gap: 20px;
+    }
+
+    .seat-section-header::before {
+      content: '';
+      width: 8px;
+      height: 60px;
+      background-color: #ffa500;
+      border-radius: 4px;
+    }
+
+    .seat-section-title {
+      font-size: 2.5rem;
+      color: #2c3e50;
+      font-weight: bold;
+    }
+
+    .seat-section-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+      gap: 30px;
+      justify-items: center;
+      margin-top: 40px;
+    }
+
+    .seat-section-card {
+      position: relative;
+      width: 450px;
+      height: 450px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #e8e8e8, #c0c0c0);
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    }
+
+    .seat-section-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .seat-section-image-economico {
+      width: 80%;
+      height: 100%;
+      margin-left: 40px;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+    }
+      .seat-section-image-especial {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: opacity 0.3s ease;
+    }
+    .seat-section-image-vip {
+      width: 110%;
+      height: 80%;
+      object-fit: contain;
+      margin: auto;
+      display: block;
+      transition: opacity 0.3s ease;
+      margin-left: -20px; /* mueve la imagen más a la izquierda */
+    }
+
+    .seat-section-info {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 30px;
+      text-align: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .seat-section-card:hover .seat-section-info {
+      opacity: 1;
+    }
+
+    .seat-section-angle {
+      font-size: 4rem;
+      margin-bottom: 10px;
+      font-family: 'Arsenal';
+      margin-left: 5%;
+    }
+
+    .seat-section-type {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .seat-section-description {
+      font-size: 1rem;
+      line-height: 1.4;
+      max-width: 300px;
+    }
+
+    @media (max-width: 768px) {
+      .seat-section-title {
+        font-size: 2rem;
+      }
+      .seat-section-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .seat-section-card {
+        width: 100%;
+        max-width: 400px;
+        height: 400px;
+      }
+    }
+
+
+    .seccion-1 {
+      margin-top: 1%;
+      background: #f8f8fc !important;
+      width: 100%;
+      padding: 0;
+    
+    }
+
+    /* Hace que el fondo del margin-top también sea blanco */
+    body, html {
+      background-color: #f8f8fc !important;
+    }
+
+    .banner-image {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+      background: #f8f8fc !important;
+    }
+
+      footer {
+    background: #0F0B53;
+    color: #fff;
+    text-align: center;
+    padding: 25px 0;
+    font-family: 'Arsenal', sans-serif;
+    margin-top: 1%;
+  }
+
+

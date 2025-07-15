@@ -1,0 +1,499 @@
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1" name="viewport" />
+  <title>Numeración y Reclinación de Asientos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <script src="https://lib.youware.com/youware-lib.1747145198.js" id="yourware-lib"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&display=swap');
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body, html {
+        font-family: 'Arsenal', sans-serif;
+        background-color: #f4f6fb;
+        color: #1a1a2e;
+        min-height: 100vh;
+    }
+    main.formbus-container {
+        background: #fff;
+        border-radius: 12px;
+        padding: 32px 16px;
+        box-shadow: 0 6px 18px rgba(15, 11, 83, 0.15);
+        max-width: 900px;
+        width: 98vw;
+        margin: 32px auto;
+        color: #1a1a2e;
+        font-family: 'Arsenal', sans-serif;
+    }
+    main.formbus-container h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #0f0b53;
+        margin-bottom: 24px;
+        border-bottom: 2px solid #4db8ff;
+        padding-bottom: 8px;
+        user-select: none;
+        letter-spacing: 0.8px;
+        text-align: center;
+    }
+
+    .pisos-container {
+        display: flex;
+        gap: 18px;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .piso-section {
+        flex: 1 1 0;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        border-radius: 10px;
+        padding: 16px 10px 18px 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 2px 8px rgba(61,185,245,0.06);
+    }
+
+    .inputs-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px 10px;
+        margin-bottom: 8px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    label.formbus-label {
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: #0f0b53;
+        margin-bottom: 4px;
+        user-select: none;
+        display: block;
+    }
+    input.formbus-input,
+    select.formbus-select {
+        width: 100%;
+        padding: 6px 8px;
+        border-radius: 8px;
+        border: 2px solid #cbd5e1;
+        background-color: #f9fbff;
+        font-family: 'Arsenal', sans-serif;
+        font-size: 0.9rem;
+        color: #1a1a2e;
+        box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.08);
+        transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        appearance: none;
+        background: none;
+        cursor: pointer;
+    }
+    input.formbus-input:focus,
+    select.formbus-select:focus {
+        outline: none;
+        border-color: #4db8ff;
+        box-shadow: 0 0 8px #4db8ffaa;
+        background-color: #fff;
+    }
+    input.formbus-input::placeholder {
+        color: #a0a8c0;
+        font-weight: 400;
+    }
+    .bus-image-container {
+        position: relative;
+        width: 100%;
+        border-radius: 12px;
+        padding: 0.3rem 0.3rem 0.7rem 0.3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 120px;
+        justify-content: center;
+        box-sizing: border-box;
+        overflow: visible;
+    }
+    .bus-image-container img {
+        width: 100%;
+        max-width: 160px;
+        height: auto;
+        margin-bottom: 0.3rem;
+        transform: rotate(-90deg);
+        object-fit: contain;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        transition: transform 0.4s cubic-bezier(.4,2,.6,1);
+    }
+    @media (max-width: 900px) {
+        .bus-image-container {
+            min-height: 80px;
+            padding: 0.2rem 0.1rem 0.5rem 0.1rem;
+        }
+        .bus-image-container img {
+            width: 95%;
+            max-width: 110px;
+        }
+    }
+    .seats-container {
+        position: absolute;
+        top: 53%;
+        left: 65%;
+        width: 40%;
+        height: 35%;
+        display: grid;
+        gap: 0.08rem;
+        color: #0F0B53;
+        font-size: 0.92rem;
+        font-weight: 700;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        pointer-events: none;
+    }
+    .seat {
+        background-color: #fff;
+        border: 1.1px solid #a8a8a8;
+        cursor: pointer;
+        transition: background-color 0.3s, border-color 0.3s, color 0.2s;
+        width: 22px;
+        height: 26px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.4rem;
+        font-size: 0.88rem;
+        user-select: none;
+        transform-origin: center center;
+        transform: rotate(-90deg);
+        pointer-events: auto;
+    }
+    .seat.selected {
+        background-color: #3db9f5 !important;
+        border-color: #009ee3 !important;
+        color: #fff !important;
+    }
+    .seat:hover:not(.selected) {
+        background-color: #e6f7fd;
+        border-color: #007bbd;
+        color: #0F0B53;
+    }
+    .seat.occupied {
+        background-color: #f3f3f3;
+        border-color: #b3b3b3;
+        cursor: not-allowed;
+        color: #999;
+    }
+    .button-row {
+        display: flex;
+        justify-content: center;
+        margin-top: 24px;
+        gap: 14px;
+    }
+    button.create-bus {
+        background-color: #0f0b53;
+        color: white;
+        font-weight: 700;
+        font-size: 1rem;
+        padding: 10px 28px;
+        border: none;
+        border-radius: 8px;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(15, 11, 83, 0.4);
+        user-select: none;
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    button.create-bus:hover,
+    button.create-bus:focus {
+        background-color: #0a0840;
+        outline: none;
+        box-shadow: 0 6px 18px rgba(15, 11, 83, 0.6);
+    }
+    @media (max-width: 1200px) {
+        .pisos-container {
+            flex-direction: column;
+            gap: 12px;
+        }
+        main.formbus-container {
+            max-width: 99vw;
+            padding: 12px 2vw;
+        }
+    }
+    @media (max-width: 900px) {
+        main.formbus-container {
+            width: 100%;
+            padding: 8px 2vw;
+        }
+        .button-row {
+            flex-direction: column;
+            gap: 8px;
+        }
+        button.create-bus {
+            width: 100%;
+        }
+    }
+</style>
+</head>
+<body>
+  <main class="formbus-container" role="main">
+    <h2>Numeración y Reclinación de Asientos</h2>
+    <div class="pisos-container">
+      <!-- Piso 1 -->
+      <div class="piso-section">
+        <div class="inputs-grid">
+          <div>
+            <label class="formbus-label" for="asientos-piso1">Asientos Piso 1</label>
+            <input class="formbus-input" id="asientos-piso1" type="number" min="1" value="9" />
+          </div>
+          <div>
+            <label class="formbus-label" for="filas-piso1">Filas Piso 1</label>
+            <select class="formbus-select" id="filas-piso1">
+              <option value="3" selected>3 filas</option>
+              <option value="4">4 filas</option>
+            </select>
+          </div>
+          <div>
+            <label class="formbus-label" for="numeracion-piso1">Numeración</label>
+            <input class="formbus-input" id="numeracion-piso1" type="text" placeholder="Selecciona un asiento" readonly />
+          </div>
+          <div>
+            <label class="formbus-label" for="reclinacion-piso1">Reclinación</label>
+            <select class="formbus-select" id="reclinacion-piso1">
+              <option disabled selected>Seleccione reclinación</option>
+              <option value="140">140°</option>
+              <option value="160">160°</option>
+              <option value="180">180°</option>
+            </select>
+          </div>
+        </div>
+        <div class="bus-image-container">
+          <img id="bus-img-1" src="/frontend/static/frontend/images/Azul y Blanco Diagrama de Cola de Pescado Presentación (57).png" alt="Vista superior del bus piso 1 con asientos numerados" />
+          <div id="seats-container-1" class="seats-container"></div>
+        </div>
+      </div>
+
+      <!-- Piso 2 -->
+      <div class="piso-section">
+        <div class="inputs-grid">
+          <div>
+            <label class="formbus-label" for="asientos-piso2">Asientos Piso 2</label>
+            <input class="formbus-input" id="asientos-piso2" type="number" min="1" value="17" />
+          </div>
+          <div>
+            <label class="formbus-label" for="filas-piso2">Fila Piso 2</label>
+            <select class="formbus-select" id="filas-piso2">
+              <option value="3" selected>3 filas</option>
+              <option value="4">4 filas</option>
+            </select>
+          </div>
+          <div>
+            <label class="formbus-label" for="numeracion-piso2">Numeración</label>
+            <input class="formbus-input" id="numeracion-piso2" type="text" placeholder="Selecciona un asiento" readonly />
+          </div>
+          <div>
+            <label class="formbus-label" for="reclinacion-piso2">Reclinación</label>
+            <select class="formbus-select" id="reclinacion-piso2">
+              <option disabled selected>Seleccione reclinación</option>
+              <option value="140">140°</option>
+              <option value="160">160°</option>
+              <option value="180">180°</option>
+            </select>
+          </div>
+        </div>
+        <div class="bus-image-container">
+          <img id="bus-img-2" src="/frontend/static/frontend/images/Azul y Blanco Diagrama de Cola de Pescado Presentación (58).png" alt="Vista superior del bus piso 2 con asientos numerados" />
+          <div id="seats-container-2" class="seats-container"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="button-row">
+      <button class="create-bus" type="button" onclick="alert('Bus creado con la configuración actual')">Crear bus</button>
+    </div>
+  </main>
+
+  <script>
+    const busData = {
+      1: { seats: [], reclinacion: {}, seatNumbers: {} },
+      2: { seats: [], reclinacion: {}, seatNumbers: {} },
+    };
+
+    const inputs = {
+      asientos1: document.getElementById("asientos-piso1"),
+      filas1: document.getElementById("filas-piso1"),
+      numeracion1: document.getElementById("numeracion-piso1"),
+      reclinacion1: document.getElementById("reclinacion-piso1"),
+      seatsContainer1: document.getElementById("seats-container-1"),
+
+      asientos2: document.getElementById("asientos-piso2"),
+      filas2: document.getElementById("filas-piso2"),
+      numeracion2: document.getElementById("numeracion-piso2"),
+      reclinacion2: document.getElementById("reclinacion-piso2"),
+      seatsContainer2: document.getElementById("seats-container-2"),
+    };
+
+    function updateBusLayout(piso) {
+      const asientosInput1 = inputs.asientos1;
+      const filasSelect1 = inputs.filas1;
+      const asientosInput2 = inputs.asientos2;
+      const filasSelect2 = inputs.filas2;
+
+      const numeracionInput = piso === 1 ? inputs.numeracion1 : inputs.numeracion2;
+      const reclinacionSelect = piso === 1 ? inputs.reclinacion1 : inputs.reclinacion2;
+      const seatsContainer = piso === 1 ? inputs.seatsContainer1 : inputs.seatsContainer2;
+
+      const totalSeats1 = parseInt(asientosInput1.value) || 0;
+      const filas1 = parseInt(filasSelect1.value) || 1;
+      const totalSeats2 = parseInt(asientosInput2.value) || 0;
+      const filas2 = parseInt(filasSelect2.value) || 1;
+
+      const validFilas1 = filas1 === 3 || filas1 === 4 ? filas1 : 3;
+      const validFilas2 = filas2 === 3 || filas2 === 4 ? filas2 : 3;
+
+      let columnas;
+      let totalSeats;
+      let filas;
+
+      if (piso === 1) {
+        totalSeats = totalSeats1;
+        filas = validFilas1;
+      } else {
+        totalSeats = totalSeats2;
+        filas = validFilas2;
+      }
+
+      if (filas > totalSeats) filas = totalSeats;
+      if (filas < 1) filas = 1;
+
+      columnas = Math.ceil(totalSeats / filas);
+
+      seatsContainer.style.gridTemplateColumns = `repeat(${columnas}, minmax(0, 1fr))`;
+      seatsContainer.style.gridTemplateRows = `repeat(${filas}, minmax(0, 1fr))`;
+
+      const currentSeats = busData[piso].seats;
+      if (currentSeats.length > totalSeats) {
+        busData[piso].seats = currentSeats.slice(0, totalSeats);
+      } else {
+        for (let i = currentSeats.length + 1; i <= totalSeats; i++) {
+          busData[piso].seats.push(i);
+          if (!busData[piso].seatNumbers[i]) {
+            busData[piso].seatNumbers[i] = i.toString();
+          }
+        }
+      }
+
+      if (piso === 2) {
+        const lastSeatPiso1 = busData[1].seats.length > 0 ? busData[1].seats.length : 0;
+        busData[2].seats = [];
+        for (let i = 1; i <= totalSeats; i++) {
+          busData[2].seats.push(i + lastSeatPiso1);
+          if (!busData[2].seatNumbers[i + lastSeatPiso1]) {
+            busData[2].seatNumbers[i + lastSeatPiso1] = (i + lastSeatPiso1).toString();
+          }
+        }
+      }
+
+      seatsContainer.innerHTML = "";
+
+      let matriz = Array.from({ length: filas }, () => Array(columnas).fill(null));
+
+      // Llenar la matriz siguiendo el patrón: columna por columna, de abajo hacia arriba
+      let seatIndex = 0;
+      for (let col = 0; col < columnas && seatIndex < busData[piso].seats.length; col++) {
+        for (let fila = filas - 1; fila >= 0 && seatIndex < busData[piso].seats.length; fila--) {
+          matriz[fila][col] = busData[piso].seats[seatIndex];
+          seatIndex++;
+        }
+      }
+
+      // Insertar asientos en el DOM siguiendo el orden visual (fila por fila, pero manteniendo la numeración correcta)
+      for (let fila = 0; fila < filas; fila++) {
+        for (let col = 0; col < columnas; col++) {
+          const seatNum = matriz[fila][col];
+          if (seatNum === null) continue;
+          const seatDiv = document.createElement("div");
+          seatDiv.className = "seat";
+          seatDiv.textContent = busData[piso].seatNumbers[seatNum] || seatNum;
+          seatDiv.dataset.seat = seatNum;
+          seatDiv.onclick = () => selectSeat(piso, seatNum);
+          if (numeracionInput.value && parseInt(numeracionInput.dataset.seat) === seatNum) {
+            seatDiv.classList.add("selected");
+          }
+          seatsContainer.appendChild(seatDiv);
+        }
+      }
+
+      if (!busData[piso].seats.includes(parseInt(numeracionInput.dataset.seat))) {
+        numeracionInput.value = "";
+        numeracionInput.dataset.seat = "";
+        numeracionInput.readOnly = true;
+        reclinacionSelect.value = "";
+      }
+    }
+
+    function selectSeat(piso, seatNum) {
+      const numeracionInput = piso === 1 ? inputs.numeracion1 : inputs.numeracion2;
+      const reclinacionSelect = piso === 1 ? inputs.reclinacion1 : inputs.reclinacion2;
+      numeracionInput.readOnly = false;
+      numeracionInput.value = busData[piso].seatNumbers[seatNum] || seatNum;
+      numeracionInput.dataset.seat = seatNum;
+      reclinacionSelect.value = busData[piso].reclinacion[seatNum] || "";
+      highlightSelectedSeat(piso, seatNum);
+    }
+
+    function highlightSelectedSeat(piso, seatNum) {
+      const seatsContainer = piso === 1 ? inputs.seatsContainer1 : inputs.seatsContainer2;
+      Array.from(seatsContainer.children).forEach((child) => {
+        if (parseInt(child.dataset.seat) === seatNum) {
+          child.classList.add("selected");
+        } else {
+          child.classList.remove("selected");
+        }
+      });
+    }
+
+    function updateSeatNumber(piso) {
+      const numeracionInput = piso === 1 ? inputs.numeracion1 : inputs.numeracion2;
+      const seatNum = parseInt(numeracionInput.dataset.seat);
+      if (!seatNum) return;
+      busData[piso].seatNumbers[seatNum] = numeracionInput.value.trim() || seatNum.toString();
+      updateBusLayout(piso);
+      selectSeat(piso, seatNum);
+    }
+
+    function updateReclinacion(piso) {
+      const numeracionInput = piso === 1 ? inputs.numeracion1 : inputs.numeracion2;
+      const reclinacionSelect = piso === 1 ? inputs.reclinacion1 : inputs.reclinacion2;
+      const seatNum = parseInt(numeracionInput.dataset.seat);
+      if (!seatNum) return;
+      busData[piso].reclinacion[seatNum] = reclinacionSelect.value;
+    }
+
+    // Event Listeners
+    inputs.asientos1.addEventListener("input", () => {
+      updateBusLayout(1);
+      updateBusLayout(2);
+    });
+    inputs.filas1.addEventListener("change", () => {
+      updateBusLayout(1);
+      updateBusLayout(2);
+    });
+    inputs.asientos2.addEventListener("input", () => updateBusLayout(2));
+    inputs.filas2.addEventListener("change", () => updateBusLayout(2));
+    inputs.numeracion1.addEventListener("input", () => updateSeatNumber(1));
+    inputs.numeracion2.addEventListener("input", () => updateSeatNumber(2));
+    inputs.reclinacion1.addEventListener("change", () => updateReclinacion(1));
+    inputs.reclinacion2.addEventListener("change", () => updateReclinacion(2));
+
+    // Initialize
+    updateBusLayout(1);
+    updateBusLayout(2);
+  </script>
+</body>
+</html>

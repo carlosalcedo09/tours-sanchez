@@ -1,0 +1,54 @@
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tours Sánchez</title>
+  <link rel="icon" href="/frontend/static/frontend/images/BOLETA FIRMADA (7).png" type="image/png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/frontend/static/frontend/css/Admin.css">
+
+</head>
+<body>
+  <header class="permanent" role="banner" style="background-color:#0F0B53; height:80px; position:fixed; top:0; left:0; right:0; display:flex; justify-content:center; align-items:center; z-index:110; box-shadow: 0 2px 8px rgb(15 11 83 / 0.3);">
+    <div class="logo" style="display:flex; justify-content:center; align-items:center;">
+      <img src="/frontend/static/frontend/images/Image Pasted 2025-24-04 at 18.06.56.png" alt="Tours Sánchez" style="height:60px; object-fit:contain;" />
+    </div>
+  </header>
+
+  <aside id="sidebar" aria-label="Sidebar navigation" style="position:fixed; top:81px; left:0; height:calc(100vh - 64px); width:72px; background:#fff; color:#0f0b53; border:1px solid #cbd5e1; box-shadow:4px 0 24px rgba(0,0,0,0.15); display:flex; flex-direction:column; z-index:100; font-family:'Arsenal', sans-serif;">
+    <div id="toggleBtn" tabindex="0" role="button" aria-expanded="false" aria-controls="sidebarNav" title="Expandir menú" aria-label="Toggle sidebar menu" style="height:64px; display:flex; justify-content:center; align-items:center; cursor:pointer; border-bottom:1px solid #cbd5e1; user-select:none;">
+      <i class="fas fa-chevron-right" style="color:#0f0b53; font-size:20px;"></i>
+    </div>
+    <nav id="sidebarNav" role="menu">
+      <a href="#" role="menuitem" title="Usuario" data-form="usuario" tabindex="0">
+        <i class="fas fa-user-circle" aria-hidden="true"></i>
+        <span>Usuario</span>
+      </a>
+      <a href="#" role="menuitem" title="Bus" data-form="bus" tabindex="0">
+        <i class="fas fa-bus" aria-hidden="true"></i>
+        <span>Bus</span>
+      </a>
+      <a href="#" role="menuitem" title="Conductor" data-form="conductor" tabindex="0">
+        <i class="fas fa-user-tie" aria-hidden="true"></i>
+        <span>Conductor</span>
+      </a>
+      <a href="#" role="menuitem" title="Ruta" data-form="ruta" tabindex="0">
+        <i class="fas fa-route" aria-hidden="true"></i>
+        <span>Ruta</span>
+      </a>
+      <a href="#" role="menuitem" title="Reportes" data-form="reportes" tabindex="0">
+        <i class="fas fa-chart-bar" aria-hidden="true"></i>
+        <span>Reportes</span>
+      </a>
+    </nav>
+    <div class="footer">© Tours Sanchez 2025</div>
+  </aside>
+
+  <main id="mainContent" role="main" aria-live="polite" aria-atomic="true" tabindex="0" style="margin-left:72px; padding:50px 20px; background:#f4f6fb; display:flex; justify-content:center; border-radius: 32px 0 0 32px; max-width: 100vw; overflow-x: auto;">
+    <!-- Aquí se cargan los formularios dinámicamente -->
+  </main>
+
+  <script src="/frontend/static/frontend/js/Admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/frontend/static/frontend/images/BOLETA FIRMADA (7).png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tours Sánchez</title>
+    <link rel="stylesheet" href="/frontend/static/frontend/css/Asientos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="logo">
+                <img src="/frontend/static/frontend/images/Image Pasted 2025-24-04 at 18.06.56.png" alt="Tours Sánchez" />
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="step">
+                <div class="circle circle-inactive">1</div>
+                <div class="label">Destino y Fecha</div>
+            </div>
+            <div class="step">
+                <div class="circle circle-active">2</div>
+                <div class="label">Selecciona Asientos</div>
+            </div>
+            <div class="step">
+                <div class="circle circle-inactive">3</div>
+                <div class="label">Registra tus Datos</div>
+            </div>
+            <div class="step">
+                <div class="circle circle-inactive">4</div>
+                <div class="label">Realiza el Pago</div>
+            </div>
+        </div>
+
+         <div class="wrapper">
+    <div class="top-bar" role="region" aria-label="Flight information">
+      <div class="top-section">
+        <span class="top-label">Salida</span>
+        <span class="top-value">Lima</span>
+      </div>
+      <div class="divider"></div>
+      <div class="top-section">
+        <span class="top-label">Destino</span>
+        <span class="top-value">Ayacucho</span>
+      </div>
+      <div class="divider"></div>
+      <div class="top-section">
+        <span class="top-label">Fecha</span>
+        <span class="top-value">04 Mayo</span>
+      </div>
+    </div>
+    <div class="timer-container" aria-label="Countdown timer">
+      <div class="hourglass" title="15 seconds countdown">
+        <div class="sand-top"></div>
+        <div class="sand-bottom"></div>
+      </div>
+    </div>
+</div>
+</section>
+<div class="main-layout" style="display: flex; flex-direction: row; align-items: flex-start; justify-content: center; gap: 32px; min-height: 600px;">
+    <!-- Left info column -->
+    <section class="left-info" style="flex: 0 0 260px; max-width: 320px;">
+        <div>
+            <hr style="margin-top: -50px; margin-bottom: 16px; margin-left: -40px;">
+            <h2 style="margin-top: 16px; margin-bottom: 16px; margin-left: -35px;">Viaje de Ida</h2>
+            <hr style="margin-top: 16px; margin-bottom: 16px;margin-left: -40px;">
+            <div class="flex-row">
+                <i class="fas fa-bus sobresalir-izq"></i>
+                <span style="margin-left: -35px;">Embarque:</span>
+            </div>
+            <p class="blue-bold">Lima</p>
+            <p class="text-xs">Av. Garcia Naranjo 560</p>
+            <p class="text-xs mb-2">La victoria - Lima</p>
+            <p class="text-xs gray">Domingo, 04 mayo del 2025</p>
+            <!-- Flecha vertical entre embarque y destino -->
+            <span class="vertical-arrow-between-icons"></span>
+            <div class="flex-row">
+                <i class="fas fa-map-marker-alt sobresalir-izq"></i>
+                <span style="margin-left: -22px;">Destino:</span>
+            </div>
+            <p class="blue-bold">Ayacucho</p>
+            <p class="text-xs">Av. Javier Pérez de</p>
+            <p class="text-xs mb-2">Cuellar S/N</p>
+            <p class="text-xs gray">Lunes, 05 mayo del 2025</p>
+            <hr style="margin-top: 16px; margin-bottom: 16px; margin-left: -40px;">
+            <p class="font-bold-sm" style="font-size: 25px; margin-left: -20px;">Servicio:<span>Exclusivo</span>
+            <hr style="margin-top: 16px; margin-bottom: 16px; margin-left: -40px;">
+            </p>
+            <div class="checkbox-group">
+                <label>
+                    <input disabled type="checkbox" />
+                    Libre
+                </label>
+                <label>
+                    <input checked class="bg-blue" disabled type="checkbox" />
+                    Seleccionado
+                </label>
+                <label>
+                    <input disabled type="checkbox" />
+                    Ocupado
+                </label>
+            </div>
+        </div>
+    </section>
+    <!-- Center buses: Bus de dos pisos a la izquierda, bus de un piso a la derecha -->
+    <section class="buses-alcentro" style="flex: 1 1 0; display: flex; flex-direction: row; align-items: flex-start; justify-content: center; gap: 32px;">
+        <!-- Bus de dos pisos (izquierda) -->
+        <div class="bus-container" role="region" aria-label="Bus segundo piso">
+            <img src="/frontend/static/frontend/images/Azul y Blanco Diagrama de Cola de Pescado Presentación (58).png" alt="Bus Segundo piso" class="bus-bg bus-bg-1" style="width: 320px; display: block; margin: 0 auto; position: relative; z-index: 1;">
+            <div class="seats piso1">
+                <button aria-label="Asiento 1A" class="seat seat-1A" data-seat="1A" type="button">
+                    <label class="Asientos-P2">10</label>
+                </button>
+                <button aria-label="Asiento 1B" class="seat seat-1B" data-seat="1B" type="button">
+                    <label class="Asientos-P2">11</label>
+                </button>
+                <button aria-label="Asiento 2A" class="seat seat-2A" data-seat="2A" type="button">
+                    <label class="Asientos-P2">12</label>
+                </button>
+                <button aria-label="Asiento 2B" class="seat seat-2B" data-seat="2B" type="button">
+                    <label class="Asientos-P2">13</label>
+                </button>
+                <button aria-label="Asiento 2C" class="seat seat-2C" data-seat="2C" type="button">
+                    <label class="Asientos-P2">14</label>
+                </button>
+                <button aria-label="Asiento 3A" class="seat seat-3A" data-seat="3A" type="button"> 
+                    <label class="Asientos-P2">15</label>
+                </button>
+                <button aria-label="Asiento 3B" class="seat seat-3B" data-seat="3B" type="button">
+                    <label class="Asientos-P2">16</label>
+                </button>
+                <button aria-label="Asiento 3C" class="seat seat-3C" data-seat="3C" type="button">
+                    <label class="Asientos-P2">17</label>
+                </button>
+                <button aria-label="Asiento 4A" class="seat seat-4A" data-seat="4A" type="button">
+                    <label class="Asientos-P2">18</label>
+                </button>
+                <button aria-label="Asiento 4B" class="seat seat-4B" data-seat="4B" type="button">
+                    <label class="Asientos-P2">19</label>
+                </button>
+                <button aria-label="Asiento 4C" class="seat seat-4C" data-seat="4C" type="button">
+                    <label class="Asientos-P2">20</label>
+                </button>
+                <button aria-label="Asiento 5A" class="seat seat-5A" data-seat="5A" type="button">
+                    <label class="Asientos-P2">21</label>
+                </button>
+                <button aria-label="Asiento 5B" class="seat seat-5B" data-seat="5B" type="button">
+                    <label class="Asientos-P2">22</label>
+                </button>
+                <button aria-label="Asiento 5C" class="seat seat-5C" data-seat="5C" type="button">
+                    <label class="Asientos-P2">23</label>
+                </button>
+                <button aria-label="Asiento 6A" class="seat seat-6A" data-seat="6A" type="button">
+                    <label class="Asientos-P2">24</label>
+                </button>
+                <button aria-label="Asiento 6B" class="seat seat-6B" data-seat="6B" type="button">
+                    <label class="Asientos-P2">25</label>
+                </button>
+                <button aria-label="Asiento 6C" class="seat seat-6C" data-seat="6C" type="button">
+                    <label class="Asientos-P2">26</label>
+                </button>
+            </div>
+        </div>
+        <!-- Bus de un piso (derecha) -->
+        <div class="bus-container bus-container-piso1" role="region" aria-label="Bus primer piso">
+            <img src="/frontend/static/frontend/images/Azul y Blanco Diagrama de Cola de Pescado Presentación (57).png" alt="Bus Primer piso" class="bus-bg bus-bg-piso1" style="width: 240px; display: block; margin: 0 auto; position: relative; z-index: 1; margin-top: 50px;">
+            <div class="seats piso1-exclusivo" style="margin-top: 50px;">
+                <button aria-label="Asiento 1A" class="seat-piso1 seat-piso1-1A" data-seat="P1-1A" type="button">
+                    <label class="Asientos-P1">1</label>
+                </button>
+                <button aria-label="Asiento 1B" class="seat-piso1 seat-piso1-1B" data-seat="P1-1B" type="button">
+                    <label class="Asientos-P1">2</label>
+                </button>
+                <button aria-label="Asiento 1C" class="seat-piso1 seat-piso1-1C" data-seat="P1-1C" type="button">
+                    <label class="Asientos-P1">3</label>
+                </button>
+                <button aria-label="Asiento 2A" class="seat-piso1 seat-piso1-2A" data-seat="P1-2A" type="button">
+                    <label class="Asientos-P1">4</label>
+                </button>
+                <button aria-label="Asiento 2B" class="seat-piso1 seat-piso1-2B" data-seat="P1-2B" type="button">
+                    <label class="Asientos-P1">5</label>
+                </button>
+                <button aria-label="Asiento 2C" class="seat-piso1 seat-piso1-2C" data-seat="P1-2C" type="button">
+                    <label class="Asientos-P1">6</label>
+                </button>
+                <button aria-label="Asiento 3A" class="seat-piso1 seat-piso1-3A" data-seat="P1-3A" type="button">
+                    <label class="Asientos-P1">7</label>
+                </button>
+                <button aria-label="Asiento 3B" class="seat-piso1 seat-piso1-3B" data-seat="P1-3B" type="button">
+                    <label class="Asientos-P1">8</label>
+                </button>
+                <button aria-label="Asiento 3C" class="seat-piso1 seat-piso1-3C" data-seat="P1-3C" type="button">
+                    <label class="Asientos-P1">9</label>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Right selection panel -->
+    <section class="mover-derecha" style="flex: 0 0 390px; max-width: 340px;">
+        <div class="container_registrar" role="region" aria-label="Selección de asientos" style="display: flex; flex-direction: column; gap: 16px;">
+            <hr style="margin-top: 10px; margin-bottom: 5px; ">
+            <h2 style="font-size: 25px;" >Pasajero</h2>
+            <hr style=" margin-bottom: 5px; ">
+            <div id="pasajero-info" style="display: flex; flex-direction: row; align-items: center; gap: 15px;">
+                <span class="left-text" style="white-space: nowrap; font-weight: bold;">Adulto 01</span>
+                <span class="middle-text" id="asiento-numero" style="margin-left: 40px; white-space: nowrap; ">Sin selección</span>
+                <span class="radio-circle" id="radio-circulo" style="margin-left: -20px; vertical-align: middle;"><span class="radio-circle-inner"></span></span>
+            </div>
+            <hr style="margin-top: 10px; margin-bottom: 1px; ">
+
+            <div class="summary-row" style="display: flex; flex-direction: column; gap: 8px; margin-top: -5x;">
+                <div class="summary-text" id="asiento-total" style="width: 100%;">Total de Asientos : 0</div>
+                <div class="summary-text" id="asiento-precio" style="width: 100%;">Precio de Asiento: <span>S/0</span></div>
+            </div>
+            <hr style="margin-top: 1px; margin-bottom: 1px; ">
+
+            <button type="button" aria-label="Registrar Pasajero" id="asiento-registrar" class="button-register" disabled style="align-self: flex-end; min-width: 220px;">
+                Registrar Pasajero
+            </button>
+            <div aria-label="Selector de asiento" class="ResumenDeAsiento_container" role="main" id="ResumenDeAsiento">
+                <div>
+                    <hr class="ResumenDeAsiento_hr"/>
+                    <h1 class="ResumenDeAsiento_titulo">Asiento seleccionado</h1>
+                    <hr class="ResumenDeAsiento_hr"/>
+                </div>
+                <section aria-atomic="true" aria-live="polite" class="ResumenDeAsiento_card">
+                    <button aria-label="Asiento anterior" class="ResumenDeAsiento_navBtn ResumenDeAsiento_navLeft" tabindex="0" type="button">‹</button>
+                    <button aria-label="Asiento siguiente" class="ResumenDeAsiento_navBtn ResumenDeAsiento_navRight" tabindex="0" type="button">›</button>
+                    <div>
+                        <img alt="" class="ResumenDeAsiento_seatIcon" height="150" loading="lazy" src="/frontend/static/frontend/images/Azul y Blanco Diagrama de Cola de Pescado Presentación (52).png" width="150" id="ResumenDeAsiento_seatIcon"/>
+                    </div>
+                    <div>
+                        <p class="ResumenDeAsiento_seatText" id="ResumenDeAsiento_seatText"> -</p>
+                        <p class="ResumenDeAsiento_degreeText" id="ResumenDeAsiento_degreeText">---</p>
+                        <p class="ResumenDeAsiento_reclineText" id="ResumenDeAsiento_reclineText">Grado de reclinación: ---</p>
+                    </div>
+                    <div class="ResumenDeAsiento_footer">
+                        <div id="ResumenDeAsiento_piso">---</div>
+                        <div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+    </main>
+    <footer>
+        &copy; Tours Sanchez - 2025 Derechos reservados.
+    </footer>
+</body>
+</html>
+<script src="/frontend/static/frontend/js/Asientos.js"></script>

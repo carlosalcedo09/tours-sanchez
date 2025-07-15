@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/frontend/static/frontend/images/BOLETA FIRMADA (7).png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tours Sánchez</title>
+    <link rel="stylesheet" href="/frontend/static/frontend/css/registrarse.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="permanent">
+        <div class="navbar">
+            <div class="menu-icon" style="position: absolute; left: 30px;">
+                <i class="fas fa-bars" style="font-size: 40px; color: white; margin-top: 20px;"></i>
+            </div>
+            <div class="logo">
+                <img src="/frontend/static/frontend/images/Image Pasted 2025-24-04 at 18.06.56.png" alt="Tours Sánchez" />
+            </div>
+        </div>
+    </header>
+
+      <div class="container" aria-label="Progreso de pasos">
+    <div class="step">
+      <div class="circle circle-inactive">1</div>
+      <div class="label">Destino y Fecha</div>
+    </div>
+    <div class="step">
+      <div class="circle circle-inactive">2</div>
+      <div class="label">Selecciona Asientos</div>
+    </div>
+    <div class="step">
+      <div class="circle circle-active">3</div>
+      <div class="label">Registra tus Datos</div>
+    </div>
+    <div class="step">
+      <div class="circle circle-inactive">4</div>
+      <div class="label">Realiza el Pago</div>
+    </div>
+  </div>
+
+  <main class="content" style="margin-top: 50px;">
+    <section class="pasajeros" aria-label="Formulario de pasajeros">
+      <h2>Pasajeros</h2>
+
+      <div class="adulto-container" aria-label="Adulto 1">
+        <header class="adulto-header">
+          <div>
+            <p class="title">Pasajero 1</p>
+            <p class="subtitle">De 18 en adelante</p>
+          </div>
+          <button aria-label="Expandir o contraer formulario" type="button" class="toggle-form" onclick="toggleForm('adulto-form')">
+            <i class="fas fa-arrow-down"></i>
+          </button>
+        </header>
+
+        <form class="adulto-form" aria-label="Formulario de datos del adulto 1" style="display: none;">
+          <div>
+            <label for="tipo-doc">Tipo de documento:</label>
+            <select id="tipo-doc" name="tipo-doc">
+              <option>DNI</option>
+              <option>Pasaporte</option>
+            </select>
+          </div>
+          <div>
+            <label for="num-doc">Número de documento:</label>
+            <input id="num-doc" name="num-doc" type="text" placeholder="Documento" />
+          </div>
+          <div class="full-width">
+            <label for="nombres">Nombres:</label>
+            <input id="nombres" name="nombres" type="text" />
+          </div>
+          <div>
+            <label for="apellido-p">Apellido Paterno:</label>
+            <input id="apellido-p" name="apellido-p" type="text" />
+          </div>
+          <div>
+            <label for="apellido-m">Apellido Materno:</label>
+            <input id="apellido-m" name="apellido-m" type="text" />
+          </div>
+          <div>
+            <label for="genero">Género:</label>
+            <select id="genero" name="genero">
+              <option>Seleccionar</option>
+              <option>Masculino</option>
+              <option>Femenino</option>
+            </select>
+          </div>
+          <div>
+            <label for="fecha-nac">Fecha de Nacimiento:</label>
+            <input id="fecha-nac" name="fecha-nac" type="date" onchange="checkEdad()" />
+          </div>
+        </form>
+      </div>
+
+      <div class="menor-container" aria-label="Menor de edad" style="display: none;">
+        <header class="menor-header">
+          <p class="alert">El pasajero es menor de edad.Requiere viajar con un Adulto.</p>
+          <button aria-label="Expandir o contraer formulario menor" type="button" class="toggle-form" onclick="toggleForm('menor-form')">
+            <i class="fas fa-arrow-down"></i>
+          </button>
+        </header>
+        <form class="menor-form" aria-label="Formulario de datos del menor" style="display: none;">
+          <div>
+            <label for="acompanante">¿Con quién viaja?</label>
+            <select id="acompanante" name="acompanante" onchange="togglePermisoNotarial()">
+              <option>Padres</option>
+              <option>Familiar</option>
+              <option>Apoderado</option>
+            </select>
+          </div>
+          <div>
+            <label for="tipo-doc-acompanante">Tipo de documento del acompañante:</label>
+            <select id="tipo-doc-acompanante" name="tipo-doc-acompanante">
+              <option>DNI</option>
+              <option>Pasaporte</option>
+            </select>
+          </div>
+          <div>
+            <label for="num-doc-acompanante">Número de documento:</label>
+            <input id="num-doc-acompanante" name="num-doc-acompanante" type="text" placeholder="Documento" />
+          </div>
+          <div id="permiso-notarial-container" style="display: none;">
+            <label for="permiso-notarial">Adjuntar permiso notarial:</label>
+            <input id="permiso-notarial" name="permiso-notarial" type="file" />
+          </div>
+          <div>
+            <label for="acompanante-nombres">Nombres:</label>
+            <input id="acompanante-nombres" name="acompanante-nombres" type="text" />
+          </div>
+          <div>
+            <label for="acompanante-apellido-p">Apellido Paterno:</label>
+            <input id="acompanante-apellido-p" name="acompanante-apellido-p" type="text" />
+          </div>
+          <div>
+            <label for="acompanante-apellido-m">Apellido Materno:</label>
+            <input id="acompanante-apellido-m" name="acompanante-apellido-m" type="text" />
+          </div>
+        </form>
+      </div>
+
+      <div class="contacto-container" aria-label="Datos del contacto">
+        <header class="contacto-header">Datos del Contacto</header>
+        <div class="contacto-body">
+          <p class="info-box">
+            Sus boletos y el comprobante de pago se enviaran a la dirección de
+            correo electrónico a continuación
+          </p>
+          <div class="inputs">
+            <div>
+              <label for="email">Correo Electrónico :</label>
+              <input id="email" name="email" type="email" />
+            </div>
+            <div>
+              <label for="celular">Celular:</label>
+              <input id="celular" name="celular" type="tel" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+       <aside aria-label="Detalle del viaje" class="detalle-viaje">
+    <hr style="margin-bottom: 20px;">
+    <h3>
+     Detalle del Viaje
+    </h3>
+    <hr style="margin-bottom: 10px;">
+    </div>
+    <div class="viaje-info" style="display:flex; align-items:flex-start; margin-top: 10px; font-size:14px;">
+     <div class="embarque" style="display:flex; align-items:flex-start; gap:12px; flex:1;">
+      <i aria-hidden="true" class="fas fa-bus" style="font-size:22px; margin-top:2px; flex-shrink:0;">
+      </i>
+      <div class="text" style="display:flex; flex-direction:column; gap:2px; color:#444;">
+       <span>
+        <strong>
+         Embarque:
+        </strong>
+        <a href="#" style="color:#3cc7ff; font-weight:700; text-decoration:none;" tabindex="-1">
+         Lima
+        </a>
+       </span>
+       <span>
+        Av. Garcia Naranjo 560
+       </span>
+       <span>
+        La victoria - Lima
+       </span>
+       <span class="fecha" style="color:#999; font-size:12px;">
+        Domingo, 04 mayo del 2025
+       </span>
+      </div>
+     </div>
+     <div aria-hidden="true" class="arrow-image-container" title="Flecha de embarque a destino">
+    <img alt="Flecha azul apuntando hacia abajo entre embarque y destino" height="1000" src="/frontend/static/frontend/images/Azul y Blanco Diagrama de Cola de Pescado Presentación (51).png" width="7500"/>
+     </div>
+     <div class="destino" style="display:flex; align-items:flex-start; gap:12px; flex:1;">
+      <i aria-hidden="true" class="fas fa-map-marker-alt" style="font-size:22px; margin-top:2px; flex-shrink:0;">
+      </i>
+      <div class="text" style="display:flex; flex-direction:column; gap:2px; color:#444;">
+       <span>
+        <strong>
+         Destino:
+        </strong>
+        <a href="#" style="color:#3cc7ff; font-weight:700; text-decoration:none;" tabindex="-1">
+         Ayacucho
+        </a>
+       </span>
+       <span>
+        Av. Javier Pérez de
+       </span>
+       <span>
+        Cuellar S/N
+       </span>
+       <span class="fecha" style="color:#999; font-size:12px;">
+        Lunes, 05 mayo del 2025
+       </span>
+      </div>
+     </div>
+    </div>
+    <div class="servicio-info" style="border-bottom:1px solid #ccc; padding-bottom:12px; margin-bottom:16px; font-size:12px;">
+     <p>
+      Servicio:
+      <span class="exclusivo" style="color:#1a1a5e; font-weight:700;">
+       Exclusivo
+      </span>
+     </p>
+     <div style="display:flex; justify-content:space-between; margin-top:4px;">
+      <span>
+       Adulto: 1
+      </span>
+      <span>
+       S/90
+      </span>
+     </div>
+     <div style="display:flex; justify-content:flex-start; margin-top:4px;">
+      <span>
+       Asiento: Nº 10
+      </span>
+     </div>
+     <p class="total" style="font-weight:700; font-size:14px; margin-top:8px;">
+      Total:
+      <span style="font-size:18px;">
+       S/90
+      </span>
+     </p>
+    </div>
+    <button class="completar-compra" style="width:100%; background-color:#3cc7ff; color:#fff; font-weight:600; font-size:14px; padding:10px 0; border:none; border-radius:9999px; cursor:pointer; transition: background-color 0.3s ease;" type="button">
+     Completar la Compra
+    </button>
+  </main>
+    <footer>
+        &copy; Tours Sanchez - 2025 Derechos reservados.
+    </footer>
+</body>
+</html>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js"></script>
+  <script src="/frontend/static/frontend/js/registrarse.js"></script>

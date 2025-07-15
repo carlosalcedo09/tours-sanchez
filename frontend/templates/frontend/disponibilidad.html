@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/frontend/static/frontend/images/BOLETA FIRMADA (7).png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Tours Sánchez</title>
+    <link rel="stylesheet" href="/frontend/static/frontend/css/disponibilidad.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Arsenal:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="menu-icon">
+                <i class="fas fa-bars"></i>
+            </div>
+            <div class="logo">
+                <img src="/frontend/static/frontend/images/Image Pasted 2025-24-04 at 18.06.56.png" alt="Tours Sánchez" />
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <div class="step">
+                <div class="circle circle-active">1</div>
+                <div class="label">Destino y Fecha</div>
+            </div>
+            <div class="step">
+                <div class="circle circle-inactive">2</div>
+                <div class="label">Selecciona Asientos</div>
+            </div>
+            <div class="step">
+                <div class="circle circle-inactive">3</div>
+                <div class="label">Registra tus Datos</div>
+            </div>
+            <div class="step">
+                <div class="circle circle-inactive">4</div>
+                <div class="label">Realiza el Pago</div>
+            </div>
+        </div>
+
+        <div class="fech" role="region" aria-label="Selector de fechas">
+    <button aria-label="Anterior" type="button" id="prevBtn">&#9664;</button>
+    <div class="dates-wrapper">
+      <div class="dates" id="datesContainer">
+        <!-- Dates will be generated here -->
+      </div>
+    </div>
+    <button aria-label="Siguiente" type="button" id="nextBtn">&#9654;</button>
+  </div>
+
+      <div class="top-bar" role="region" aria-label="Resumen de búsqueda">
+      <div class="top-section">
+        <span class="top-label">Salida</span>
+        <span class="top-value" id="salidaValue">Lima</span>
+      </div>
+      <div class="divider" aria-hidden="true"></div>
+      <div class="top-section">
+        <span class="top-label">Destino</span>
+        <span class="top-value" id="destinoValue">Ayacucho</span>
+      </div>
+      <div class="divider" aria-hidden="true"></div>
+      <div class="top-section" id="fechaSection">
+        <span class="top-label">Fecha</span>
+        <span class="top-value" id="fechaValue">04 Mayo</span>
+      </div>
+      <div class="divider" aria-hidden="true"></div>
+      <button class="modify-btn" type="button" aria-label="Modificar búsqueda">Modificar Destino</button>
+    </div>
+
+            <section class="bus-cards-container" aria-label="Viajes disponibles">
+          <article class="bus-card" aria-label="Servicio Exclusivo de Lima a Ayacucho con bus de 2 pisos">
+            <div class="bus-card-top">
+              <div class="bus-left-block">
+                <span class="service-label">Servicio</span>
+                <h2>Exclusivo</h2>
+                <div class="seats">
+                  <span>Asientos</span>
+                  <i aria-hidden="true" title="Icono de asiento">
+                    <img src="/frontend/static/frontend/images/Azul y Blanco Diagrama de Cola de Pescado Presentación (52).png" alt="Icono de asiento" width="30" height="30" style="vertical-align:middle;" />
+                  </i>
+                </div>
+                <p class="seat-degrees">160<sup>o</sup> / 180<sup>o</sup></p>
+              </div>
+
+              <div class="bus-middle-block">
+                <div class="bus-location-block">
+                  <span class="city">Lima</span>
+                  <p class="time">09:00<sup>PM</sup></p>
+                  <p class="address">Av. Garcia Naranjo 560</p>
+                </div>
+
+                <div class="bus-arrows-block" aria-label="Duración 10 horas">
+                  <span class="hours">10 horas</span>
+                  <div class="bus-arrows" aria-hidden="true" title="Flechas indicando duración">
+                    <img src="/frontend/static/frontend/images/Azul y Blanco Diagrama de Cola de Pescado Presentación (51).png" alt="Duración del viaje" width="60" height="30" />
+                   </div>
+                </div>
+
+                <div class="bus-location-block">
+                  <span class="city">Ayacucho</span>
+                  <p class="time">07:00<sup>AM</sup></p>
+                  <p class="address">Av. Javier Pérez de Cuellar S/N</p>
+                </div>
+              </div>
+
+              <div class="bus-right-block">
+                <span>Desde:</span>
+                <p class="price">S/<strong>90</strong></p>
+                <button type="button" aria-label="Seleccionar asiento para servicio desde 90 soles">Seleccionar Asiento</button>
+                <p class="available">15 Asientos Disponibles</p>
+              </div>
+            </div>
+            <div class="bus-bottom-bar" aria-label="Información adicional del servicio" style="display: flex; justify-content: center; align-items: center;">
+              <div style="display: flex; align-items: center; gap: 5px;">
+                <span style="display: flex; align-items: center; gap: 8px;">
+                  <img src="/frontend/static/frontend/images/Azul y Blanco Diagrama de Cola de Pescado Presentación (54).png" alt="Icono de verificación" class="icon-check-circle" width="25" height="20" style="vertical-align:middle;" />
+                  1 Escala
+                  <img src="/frontend/static/frontend/images/Azul y Blanco Diagrama de Cola de Pescado Presentación (53).png" alt="Icono de ubicación" class="icon-map-marker" width="45" height="35" style="vertical-align:middle;" />
+                </span>
+                <span style="display: flex; align-items: center; gap: 8px;"></span>
+                  <img src="/frontend/static/frontend/images/Azul y Blanco Diagrama de Cola de Pescado Presentación (54).png" alt="Green checkmark icon indicating verified or approved service" class="icon-check-circle" width="25" height="20" style="vertical-align:middle;" />
+                  Bus de 2 Pisos
+                  <img src="/frontend/static/frontend/images/Azul y Blanco Diagrama de Cola de Pescado Presentación (56).png" alt="Bus de 2 pisos" class="icon-bus" width="80" height="35" style="vertical-align:middle;" />
+                </span>
+              </div>
+            </div>
+          </article>
+        </section>
+
+            <section class="bus-cards-container" aria-label="Viajes disponibles">
+          <article class="bus-card" aria-label="Servicio Exclusivo de Lima a Ayacucho con bus de 2 pisos">
+            <div class="bus-card-top">
+              <div class="bus-left-block">
+                <span class="service-label">Servicio</span>
+                <h2>Vip</h2>
+                <div class="seats">
+                  <span>Asientos</span>
+                  <i aria-hidden="true" title="Icono de asiento">
+                    <img src="/frontend/static/frontend/images/Azul y Blanco Diagrama de Cola de Pescado Presentación (52).png" alt="Icono de asiento" width="30" height="30" style="vertical-align:middle;" />
+                  </i>
+                </div>
+                <p class="seat-degrees"> 180<sup>o</sup></p>
+              </div>
+
+              <div class="bus-middle-block">
+                <div class="bus-location-block">
+                  <span class="city">Lima</span>
+                  <p class="time">10:00<sup>PM</sup></p>
+                  <p class="address">Av. Garcia Naranjo 560</p>
+                </div>
+
+                <div class="bus-arrows-block" aria-label="Duración 10 horas">
+                  <span class="hours">10 horas</span>
+                  <div class="bus-arrows" aria-hidden="true" title="Flechas indicando duración">
+                    <img src="/frontend/static/frontend/images/Azul y Blanco Diagrama de Cola de Pescado Presentación (51).png" alt="Duración del viaje" width="60" height="30" />
+                   </div>
+                </div>
+
+                <div class="bus-location-block">
+                  <span class="city">Ayacucho</span>
+                  <p class="time">08:00<sup>AM</sup></p>
+                  <p class="address">Av. Javier Pérez de Cuellar S/N</p>
+                </div>
+              </div>
+
+              <div class="bus-right-block">
+                <span>Desde:</span>
+                <p class="price">S/<strong>120</strong></p>
+                <button type="button" aria-label="Seleccionar asiento para servicio desde 90 soles">Seleccionar Asiento</button>
+                <p class="available">5 Asientos Disponibles</p>
+              </div>
+            </div>
+            <div class="bus-bottom-bar" aria-label="Información adicional del servicio" style="display: flex; justify-content: center; align-items: center;">
+              <div style="display: flex; align-items: center; gap: 5px;">
+                <span style="display: flex; align-items: center; gap: 8px;">
+                  <img src="/frontend/static/frontend/images/Azul y Blanco Diagrama de Cola de Pescado Presentación (54).png" alt="Icono de verificación" class="icon-check-circle" width="25" height="20" style="vertical-align:middle;" />
+                  1 Escala
+                  <img src="/frontend/static/frontend/images/Azul y Blanco Diagrama de Cola de Pescado Presentación (53).png" alt="Icono de ubicación" class="icon-map-marker" width="45" height="35" style="vertical-align:middle;" />
+                </span>
+                <span style="display: flex; align-items: center; gap: 8px;"></span>
+                  <img src="/frontend/static/frontend/images/Azul y Blanco Diagrama de Cola de Pescado Presentación (54).png" alt="Green checkmark icon indicating verified or approved service" class="icon-check-circle" width="25" height="20" style="vertical-align:middle;" />
+                  Bus de 2 Pisos
+                  <img src="/frontend/static/frontend/images/Azul y Blanco Diagrama de Cola de Pescado Presentación (56).png" alt="Bus de 2 pisos" class="icon-bus" width="80" height="35" style="vertical-align:middle;" />
+                </span>
+              </div>
+            </div>
+          </article>
+        </section>
+
+    </main>
+
+    <footer>
+        &copy; Tours Sanchez - 2025 Derechos reservados.
+    </footer>
+</body>
+<script src="/frontend/static/frontend/js/disponibilidad.js"></script>
+</html>
