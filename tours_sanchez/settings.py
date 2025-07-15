@@ -21,6 +21,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    
+    'unfold',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -85,9 +87,9 @@ DATABASES = {
         'PASSWORD': os.getenv('DATABASE_PASSWORD'),
         'HOST': os.getenv('DATABASE_HOST'),
         'PORT': int(os.getenv('DATABASE_PORT')),
-        'OPTIONS':{
-            'driver': 'ODBC Driver 17 for SQL Server'
-        }
+        #'OPTIONS':{
+        #    'driver': 'ODBC Driver 17 for SQL Server'
+        #}
     }
 }
 
@@ -143,6 +145,36 @@ REST_FRAMEWORK = {
         'rest_framework.permissions.IsAuthenticated',
     )
 }
+
+
+
+UNFOLD = {
+    "SITE_TITLE": "Panel de Administración",
+    "SITE_HEADER": " ",
+    "SITE_ICON": "admin/img/logo.jpeg",
+    "SITE_TAGLINE": "Bienvenido al sistema de gestión",
+    "SHOW_HISTORY": True,
+    "SHOW_VIEW_ON_SITE": True,
+    "COPYRIGHT": "© 2025 Tours Sánchez",
+    "NAV": [
+        {
+            "title": "Dashboard",
+            "icon": "heroicons-outline:home",
+            "url": "/admin/",
+        },
+        {
+            "title": "Pasajeros",
+            "icon": "heroicons-outline:user",
+            "model": "pasajeros.Pasajero",
+        },
+        {
+            "title": "Reservas",
+            "icon": "heroicons-outline:calendar",
+            "model": "reservas.Reserva",
+        },
+    ],
+}
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / 'frontend/static']
 STATIC_ROOT = BASE_DIR / 'staticfiles'
